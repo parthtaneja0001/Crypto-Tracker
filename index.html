@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>₿</text></svg>">
+    <title>Crypto Analytics Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Add Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="app-container">
+      <nav class="sidebar">
+        <div class="logo">
+          <div class="logo-symbol">₿</div>
+          <h1>CryptoTracker</h1>
+        </div>
+        <div class="nav-controls">
+          <select id="cryptoSelect" class="nav-select">
+            <option value="bitcoin">Bitcoin (BTC)</option>
+            <option value="ethereum">Ethereum (ETH)</option>
+            <option value="dogecoin">Dogecoin (DOGE)</option>
+          </select>
+          <select id="timeRange" class="nav-select">
+            <option value="24h">24 Hours</option>
+            <option value="7d">7 Days</option>
+            <option value="30d">30 Days</option>
+          </select>
+        </div>
+      </nav>
+
+      <main class="main-content">
+        <div class="dashboard-header">
+          <div class="current-price-container">
+            <h2>Current Price</h2>
+            <div id="currentPrice" class="price-display"></div>
+          </div>
+          <div class="market-sentiment">
+            <h2>Market Sentiment</h2>
+            <div id="prediction"></div>
+          </div>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="card chart-card">
+            <h2>Price History</h2>
+            <canvas id="priceChart"></canvas>
+          </div>
+
+          <div class="card stats-card">
+            <h2>Market Statistics</h2>
+            <div id="stats" class="stats-grid"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
